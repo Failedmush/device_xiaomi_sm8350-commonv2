@@ -20,3 +20,11 @@ allow devicesettings_app vendor_sysfs_corecontrol:file { getattr open read write
 # Kernel Manager
 allow devicesettings_app sysfs_devices_system_cpu:file { open read write };
 allow devicesettings_app sysfs_devices_system_cpu:dir search;
+
+# GPU Manager
+allow devicesettings_app vendor_sysfs_kgsl:file { getattr open read write };
+allow devicesettings_app vendor_sysfs_kgsl:dir search;
+allow devicesettings_app vendor_sysfs_kgsl_gpuclk:file { getattr open read write };
+allow devicesettings_app vendor_sysfs_kgsl_gpuclk:dir search;
+allow devicesettings_app vendor_sysfs_kgsl:lnk_file read;
+
